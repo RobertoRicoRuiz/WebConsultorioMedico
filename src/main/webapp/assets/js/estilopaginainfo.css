@@ -1,0 +1,226 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/09/2021, 6:30:44 p. m.
+    Author     : Mauricio
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;       
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.titulo{
+    color: #6610f2;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.contenedor{
+    padding: 60px 0 ;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo{
+    color: #6610f2;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+
+/*header*/
+header{
+    width: 100%;
+    height: 350px;
+    background: #00C9FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;    
+}
+
+header .texto-header{
+    display: flex;
+    height: 130px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 100px;
+    
+}
+
+.texto-header h1{
+    font-size: 60px;
+    color: white;
+}
+
+.texto-header h2{
+    font-size: 50px;
+    font-weight: 300;
+    color:#fdfdfe;
+}
+
+.wave{
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+img{
+    display: block;
+    object-fit: cover; 
+    width: auto;
+    position: relative;
+    bottom: 40%;
+    left: 10%;
+    width: 200px;
+}
+
+
+.navegacion{
+    width: 100%;
+    margin: 30px auto;
+    background: #000;
+}
+
+navegacion ul{
+    list-style: none;
+    
+}
+.menu > li{
+    display: inline-block;
+    font-size: 30px;
+}
+
+.menu > li > a{
+    display: block;
+    padding: 10px 100px;
+    color: #ffffff;
+    font-family: fantasy;
+    text-decoration: none;
+}
+
+.menu li a:hover{
+    color: #92FE9D;
+    transition: all .3s;    
+}
+
+/*submenu*/
+.submenu{
+    position: absolute;
+    background: #323539; 
+    width: 20%;
+    visibility: hidden;
+    transition: opacity 1.5s; 
+}
+
+.submenu li a{    
+    display: block;
+    padding: 5px; 
+    color:white;
+    font-family: monospace;
+    text-decoration: none;  
+}
+
+.menu li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    
+}
+
+/*main*/
+/*about-us*/
+
+.contenedor-sobre-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagen-about-us{
+    width: 40%;
+}
+
+.sobre-nosotros .contenido-textos{
+    width: 48%;
+}
+
+.contenido-textos h3{
+    margin-bottom: 15px;
+}
+.contenido-textos h3 span{
+    background: #6610f2;
+    color: white;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px 0 #000;
+    margin-right: 30px;  
+}
+
+.contenido-textos{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;    
+}
+
+/*pie de pagina*/
+
+
+.contenido-textos{
+    padding: 0px 0px 30px 15px;
+    font-weight: 300;
+    text-align: justify;    
+}
+
+footer{
+    background: #0c4128;
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.contenedor-footer{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin: auto;
+    padding-bottom: 50px;     
+    border-bottom: 1px solid #fdfdfe;
+}
+.content-foo{
+    text-align: center;
+}
+
+.content-foo h4{
+     color: white;
+     border-bottom: 3px solid #92FE9D;
+     padding-bottom: 5px;
+     margin-bottom: 10px;     
+}
+
+.content-foo{
+    color: white;
+}
+.titulo-final{
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 0 0;
+    color: #d3d3d4 ;
+}
+
