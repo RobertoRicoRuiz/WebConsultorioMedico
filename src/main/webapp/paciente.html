@@ -1,71 +1,106 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
-     <body>
-	<h1><p align="CENTER">REGISTRO DE PACIENTE </p></h1>
-	<form method="POST" id="miform" action="mailto:mecajuly@hotmail.com">
-		<table border="1" width="50%" align="CENTER">
-			<tbody><tr>
-				<th colspan="2" align="CENTER">INFORMACION USUARIO</th>
-			</tr>
-			<tr>
-				<td align="CENTER">NOMBRE</td>
-				<td><input type="TEXT" maxlength="50" id="nombre"></td>
-			</tr>
-			<tr>
-				<td align="CENTER">APELLIDO</td>
-				<td><input type="TEXT" maxlength="50" id="apellidos"></td>
-			</tr>
-			<tr>
-				<td align="CENTER">SEXO</td>
-				<td><input type="TEXT" maxlength="6" id="sexo"></td>
-			</tr>
-			<tr>
-				<td align="CENTER" width="50%">EDAD</td>
-				<td><input type="TEXT" id="edad"></td>
-			</tr>
-			<tr>
-				<td align="CENTER">EMAIL</td>
-				<td><input type="TEXT" maxlength="50" id="email"></td>
-                        <tr>
-                            <td align="CENTER" width="50%">CELULAR</td>
-				<td><input type="TEXT" id="celular"></td>
-			</tr>
-                         <tr>
-				<td align="CENTER" width="50%">TELEFONO</td>
-				<td><input type="TEXT" id="telefono"></td>
-                        <tr>
-				<td align="CENTER">OCUPACION</td>
-				<td><input type="TEXT" maxlength="50" id="ocupacion"></td>
-			</tr>
-                         <tr>
-				<td align="CENTER">DIRECCION</td>
-				<td><input type="TEXT" maxlength="50" id="direccion"></td>
-			</tr>
-<tr>
-				<td align="CENTER">TIPO SANGRE</td>
-				<td><input type="TEXT" maxlength="4" id="tipo_sangre"></td>
-			</tr>
-                        <tr>
-				<td align="CENTER" width="50%">PROFESION</td>
-				<td><input type="TEXT" id="profesion"></td>
-			</tr>
-			
-			</tbody></table>
-				<input type="SUBMIT" value="ENVIAR">
-				<input type="RESET" value="BORRAR">		
-		<div id="midiv">
-		</div>
-	</form>
+    <body>
+        <section style="background-color: blue; text-align: center">
+            <h1 style="font-size: 50px; color: #ffffff; ">FORMULARIO INGRESO DATOS DE PACIENTE  </h1>
+        </section>
+        
+        <section>
+            <form>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        
+                        
+                        <div class="mb-3">
+  <label for="nombre" class="form-label">Nombre</label>
+  <input type="nombre" class="form-control" id="nombre" placeholder="Nombre">
+</div>
+                        <div class="mb-3">
+  <label for="apellido" class="form-label">Apellido</label>
+  <input type="apellido" class="form-control" id="apellido" placeholder="Apellido">
+                        </div>
+  <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+  <div class="mb-3">
+  <label for="Celular" class="form-label">Numero Celular</label>
+  <input type="Celular" class="form-control" id="exampleFormControlInput1" placeholder="XXX XXX XXXX">
+</div>
+  
+</div>
+   <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Sexo</option>
+  <option value="1">RH Hombre</option>
+  <option value="2">RH Mujer</option>
+ </select>                       
 
-</body>
+ </div>
+  <div class="mb-3">
+  <label for="Telefono" class="form-label">Numero Telefono</label>
+  <input type="Telefono" class="form-control" id="exampleFormControlInput1" placeholder="60 X XXX XXXXX">
+</div>                       
+ <div class="mb-3">
+  <label for="Ocupacion " class="form-label">Ocupacion</label>
+  <input type="Ocupacion" class="form-control" id="ocupacion" placeholder="Defina el Tipo de Ocupacion">
+                        </div>                        
+  <div class="mb-3">
+  <label for="Direccion " class="form-label">Direccion</label>
+  <input type="Direccion" class="form-control" id="direccion" placeholder="Direccion">
+                        </div>                   
+                
+                
+            <div class="mb-3">
+  <label for="Profesion " class="form-label">Profesion</label>
+  <input type="Profesion" class="form-control" id="direccion" placeholder="Profesion">
+                        </div>             
+                                     
+                        
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Tipo de Sangre</option>
+  <option value="1">RH O+</option>
+  <option value="2">RH O-</option>
+  <option value="3">RH A+</option>
+  <option value="3">RH A-</option>
+  <option value="3">RH B+</option>
+  <option value="3">RH B-</option>
+  <option value="3">RH AB+</option>
+  <option value="3">RH AB-</option>
+  
+  <div class="mb-3">
+  <label for="Profesion" class="form-label">Profesion</label>
+  <input type="Profesion" class="form-control" id="profesion" placeholder="Profesion">
+                        </div>   
+</select>
+                        
+                
+
+                                                        
+                        </div>
+                    </div>
+                    <div class="col">
+                    
+                       
+</form>
+
+                        
+                        
+                        
+                        
+            </form>
+            <br>
+        
+            
+        </section>
+        <br>
+      
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
 </html>
