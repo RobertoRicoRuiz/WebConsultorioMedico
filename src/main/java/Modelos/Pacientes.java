@@ -7,7 +7,7 @@ package Modelos;
 
 /**
  *
- * @author rober
+ * @author Roberto Rico Ruiz
  */
 public class Pacientes{
     //ATRIBUTOS

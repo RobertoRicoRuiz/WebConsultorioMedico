@@ -9,7 +9,7 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author rober
+ * @author Roberto Rico Ruiz
  */
 public class Conexion {
     //ATRIBUTOS
