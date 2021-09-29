@@ -5,6 +5,7 @@
  */
 package Modelos;
 
+import java.sql.PreparedStatement;
 /**
  *
  * @author Roberto Rico Ruiz
@@ -128,7 +129,33 @@ public class Pacientes{
     
     //METODOS
     public void crearPaciente() {
+         Conexion objConector = new Conexion(); 
+        objConector.conectar();
         
+        try {
+            
+            String sql = "INSERT INTO paciente VALUES(?,?,?,?,?,?,?,?,?,?,?,?);";
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            stmt.setInt(1, this.idPaciente);
+            stmt.setString(2, this.nombre);
+            stmt.setString(3, this.apellido);
+            stmt.setString(4, this.sexo);
+            stmt.setString(5, this.email);
+            stmt.setString(6, this.celular);
+            stmt.setString(7, this.telefono);
+            stmt.setString(8, this.ocupacion);
+            stmt.setString(9, this.direccion);
+            stmt.setString(10, this.tipoSangre);
+            stmt.setString(10, this.profesion);
+            stmt.setInt(1, this.id_EPS);
+            
+            stmt.execute(); 
+            
+            objConector.desconectar();
+        } catch (Exception error) {
+            System.out.println("Error Modelo: "+error);
+        }
     }
     
     public void consultarPaciente() {

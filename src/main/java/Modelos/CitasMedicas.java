@@ -92,12 +92,7 @@ public class CitasMedicas {
     
      //METODOS
     public void crearCitaMedica() {
-        Conexion objConector = new Conexion();
-        objConector.conectar();
         
-        try {
-            String sql = "INSERT INTO citas_medicas"
-        }
     }
     
     public void consultarCitaMedica() {
