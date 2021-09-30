@@ -5,6 +5,7 @@
  */
 package Controladores;
 
+import Modelos.Pacientes;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ControlPacientes", urlPatterns = {"/ControlPacientes"})
 public class ControlPacientes extends HttpServlet {
-
+    Pacientes objPacientes = new Pacientes(); 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,19 +32,54 @@ public class ControlPacientes extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        
+       try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ControlPacientes</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ControlPacientes at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String accion = request.getParameter("btnAccion"); 
+            
+            if(accion.equals("Insertar")){
+                
+                int idPaciente = Integer.parseInt(request.getParameter("idPaciente")); 
+                String nombre = request.getParameter("nombre"); 
+                String apellido = request.getParameter("apellido"); 
+                String sexo = request.getParameter("sexo"); 
+                String email = request.getParameter("email"); 
+                String celular = request.getParameter("celular"); 
+                String telefono = request.getParameter("telefono"); 
+                String ocupacion = request.getParameter("ocupacion"); 
+                String direccion = request.getParameter("direccion"); 
+                String tipoSangre = request.getParameter("tipoSangre"); 
+                String profesion = request.getParameter("profesion"); 
+                int id_EPS = Integer.parseInt(request.getParameter("id_EPS"));
+               
+                
+                objPacientes.setIdPaciente(idPaciente);
+                objPacientes.setNombre(nombre);
+                objPacientes.setApellido(apellido);
+                objPacientes.setSexo(sexo);
+                objPacientes.setEmail(email);
+                objPacientes.setCelular(celular);
+                objPacientes.setTelefono(telefono);
+                objPacientes.setOcupacion(ocupacion);
+                objPacientes.setDireccion(direccion);
+                objPacientes.setTipoSangre(tipoSangre);
+                objPacientes.setProfesion(profesion);
+                objPacientes.setId_EPS(id_EPS);
+         
+                objPacientes.crearPaciente();
+                
+                String mensaje = "<html> <body>"+
+                                 " <script type='text/javaScript'> "+
+                                 "      alert('Paciente insertado correctamente!'); "+
+                                 "      window.location.href='index.jsp'"+
+                                 "</script> </body> </html>"; 
+                
+                out.println(mensaje);
+            }
         }
+        catch(Exception error){
+            System.out.println("Error Controlador: "+ error);
+        } 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

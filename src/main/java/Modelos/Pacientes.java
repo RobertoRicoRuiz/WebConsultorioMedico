@@ -147,8 +147,8 @@ public class Pacientes{
             stmt.setString(8, this.ocupacion);
             stmt.setString(9, this.direccion);
             stmt.setString(10, this.tipoSangre);
-            stmt.setString(10, this.profesion);
-            stmt.setInt(1, this.id_EPS);
+            stmt.setString(11, this.profesion);
+            stmt.setInt(12, this.id_EPS);
             
             stmt.execute(); 
             
