@@ -1,3 +1,10 @@
+<%-- 
+    Document   : citas2
+    Created on : 30/09/2021, 04:53:40 PM
+    Author     : user
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html lang="en">
 	
 
