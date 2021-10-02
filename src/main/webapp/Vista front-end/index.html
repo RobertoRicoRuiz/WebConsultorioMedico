@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <!--Link Bootstrap-->        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link href="assest3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <!--Link CSS -->
+        <link href="assest3/css/unioncss.css" rel="stylesheet" type="text/css"/>
+        <!--estilo de letra -->
+        <link rel = "preconnect" href = "https://fonts.googleapis.com">
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+        <link href = "https: //fonts.googleapis.com/css2? family = Open + Sans: ital @ 1 & display = swap " rel =" stylesheet ">
+        
+        <!--scrollreveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>   
+        
+        <!-- font- awesone -->
+        <script src="https://kit.fontawesome.com/e96e462752.js" crossorigin="anonymous"></script>
+    
+        <style>
+            
+            body{
+                background-image: url(assest3/img/17545.jpg)
+            }
+            
+                        
+            .ig{
+                padding: 30px;
+                font-weight: 200;
+                text-align: justify;
+            }
+            .ig h3{
+                margin-bottom: 30px;
+            }
+            
+            .ig h3 span{
+                background: #6610f2;
+                color: white;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+                width: 50px;
+                height: 40px;
+                padding: 2px;
+                box-shadow: 0 0 6px 0 #000;
+                margin-right: 30px; 
+            }
+           
+            .bg{
+                background-image: url(assest3/img/Inicio.png);
+                background-position: right;               
+            }
+                        
+            .enca{
+                background: #fc4a1a;  /* fallback for old browsers */
+                background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            }
+            
+            .contenido-textos{
+                padding: 0px 0px 30px 15px;
+                font-weight: 300;
+                text-align: justify;    
+            }
+
+            footer{
+                background: #0c4128;
+                padding: 60px 0 30px 0;
+                margin: auto;
+                overflow: hidden;
+            }
+
+            .contenedor-footer{
+                display: flex;
+                width: 90%;
+                justify-content: space-between;
+                margin: auto;
+                padding-bottom: 50px;     
+                border-bottom: 1px solid #fdfdfe;
+            }
+            .content-foo{
+                text-align: center;
+            }
+
+            .content-foo h4{
+                color: white;
+                border-bottom: 3px solid #92FE9D;
+                padding-bottom: 5px;
+                margin-bottom: 10px;     
+            }
+
+            .content-foo{
+                color: white;
+            }
+            .titulo-final{
+                text-align: center;
+                font-size: 24px;
+                margin: 20px 0 0 0;
+                color: #d3d3d4 ;
+            }
+        </style>
+    </head>
+    
+    
+    <body>
+        
+        <!-- Barra de navegacion -->
+        <nav class="navbar navbar-expand-lg navbar-dark enca shadow fixed-top">
+            <div class="container">
+                <div>
+                    <img src="assest3/img/Logo.png" style="width: 70%" >
+                </div>
+                <a class="navbar-brand" href="#"><h1>Consultorio Medico Virtual</h1></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link h5" href="#inicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5" href="#informacion">Informacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link h5" href="#citas">Citas</a>
+                        </li>                                             
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        
+            
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ingreso de Datos</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputPassword4">Password</label>
+                                    <input type="password" class="form-control" id="inputPassword4">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress2">Address 2</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputCity">City</label>
+                                    <input type="text" class="form-control" id="inputCity">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputState">State</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="inputZip">Zip</label>
+                                    <input type="text" class="form-control" id="inputZip">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Check me out
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         
+        <header id="inicio">
+            <div class="container mt-3 rounded shadow ">
+            <div class="row align-items-stretch">
+                <div class="col bg d-none d-lg-block col-md-5 col-md-5 col-md-6 rounded"></div>
+                
+                <!-- formulario -->
+                <div class="col fg bg-light rounded-right pt-2">
+                    <h2 class="fw-bold text-center pt-3">Bienvenido</h2>
+                    
+                    <!-- Login -->
+                    
+                    <form class=" py-5">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Correo Electronico</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn btn-lg bts">Ingresar</button>
+                        <button type="button" class="btn btn-success btn btn-lg bts" data-toggle="modal" data-target="#exampleModal">Registrar</button>
+                    </form> 
+                </div>                   
+            </div>
+        </div>
+        </header>
+       
+        <div class="m-5" id="cr">
+            <div class="row">
+                <div class="card-group">
+                    <div class="card p-2">
+                        <img src="assest3/img/cv19.png" class="card-img-top">                        
+                        <div class="card-body">
+                            <h5 class="card-title font-italic text-center">Coronavirus</h5>
+                            <p class="card-text text-justify">La enfermedad por coronavirus (COVID 19) es una enfermedad infecciosa causada por un coronavirus descubierto recientemente.<br>
+                               La mayoría de las personas infectadas por el virus de la COVID-19 presentan cuadros respiratorios de leves a moderados y se recuperan sin tratamiento especial. Las personas mayores y las que padecen afecciones médicas subyacentes, como enfermedades cardiovasculares, diabetes, enfermedades respiratorias crónicas o cáncer, tienen más probabilidades de presentar un cuadro grave.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><a href="https://www.who.int/es/health-topics/coronavirus#tab=tab_1">https://www.who.int/es/health-topics/coronavirus#tab=tab_1</a></small>
+                        </div>
+                    </div>
+                    <div class="card p-2">                        
+                        <img src="assest3/img/enfermo.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title font-italic text-center">Síntomas</h5>
+                            <p class="card-text text-justify"><b>Síntomas más frecuentes:</b><br>fiebre, tos seca, cansancio.<br><b>Síntomas menos frecuentes:</b> dolores y molestias, dolor de garganta, diarrea, conjuntivitis,
+                                dolor de cabeza, pérdida del gusto o el olfato, sarpullido en la piel o decoloración de los dedos de las manos o pies.<br>
+                                <b>Síntomas graves:</b><br> dificultad para respirar o disnea, dolor u opresión en el pecho, pérdida del habla o del movimiento.<br>
+                                Busque atención médica de inmediato si presenta síntomas graves. Llame siempre antes de visitar a su médico o de acudir a un centro de salud.
+                                 </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><a href="https://www.who.int/es/health-topics/coronavirus#tab=tab_1">https://www.who.int/es/health-topics/coronavirus#tab=tab_1</a></small>
+                        </div>
+                    </div>
+                    <div class="card p-2">
+                        <img src="assest3/img/preve.png" class="card-img-top">                        
+                        <div class="card-body">
+                            <h5 class="card-title font-italic text-center">Prevención</h5>
+                            <p class="card-text text-justify">Para prevenir la infección por el virus de la COVID 19 y frenar su transmisión, haga lo siguiente:<br> Lávese las manos con agua y jabón o límpieselas con gel hidroalcohólico frecuentemente, Mantenga una distancia mínima de 1 metro entre usted y las personas que tosan o estornuden, 
+                                Evite tocarse la cara, Cúbrase la boca y la nariz al toser o estornudar, Quédese en casa si no se encuentra bien, Absténgase de fumar y realizar otras actividades que debiliten los pulmones, Respete el distanciamiento físico evitando viajes innecesarios y alejándose de grupos numerosos de personas.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted"><a href="https://www.who.int/es/health-topics/coronavirus#tab=tab_1">https://www.who.int/es/health-topics/coronavirus#tab=tab_1</a></small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <section id="informacion">
+            <div class=" m-4 rounded shadow bg-white">
+                <br>
+                <h2 class=" font-weight-bold h1 p-2 text-center">Información</h2>
+                <hr>
+                <div class="row align-items-stretch">
+
+                    <div class="ig col  m-5 p-5">
+                        <h3><span>1</span>Un medico personal y confiable</h3>
+                        <p>Una alternativa diferente para cuidar tu salud. Estoy cuando me necesites.</p><br>
+                        <p>Este proyecto tiene como fin servir de apoyo para las personas, médicos y consultorios que tienen dificultades en la gestión de citas, a través de la aplicación integrada de tecnologías de información y telecomunicaciones, específicamente 
+                            en el área de la telemedicina, con la generación de un software de Consultorio On 
+                            Line enfocado en la gestión de citas altamente útil, de fácil acceso y sostenible en 
+                            el tiempo, utilizando como medio base el Internet, programación, que actualmente 
+                            permite funcionamiento de distintas tecnologías en forma global.</p>
+                    </div>
+                    <div class="col d-none d-lg-block col-md-5 col-md-5 col-md-6 rounded-circle">
+                        <img src="assest3/img/cons.jpg" class="w-75 mx-3 mt-5">
+                    </div>                        
+                </div>                
+                <div class="row align-items-stretch">
+                    
+                    <div class="col d-none d-lg-block col-md-5 col-md-5 col-md-6">
+                        <img src="assest3/img/doc.png" class="w-75 p-5 m-5">
+                        
+                    </div> 
+
+                    <div class="ig col  m-5 p-5">
+                        <h3><span>2</span>Soy un medico que se preocupa por ti</h3>
+                        <p> <b class="h4">Nombre: </b> <span class="h4 text-muted mb-4">Juan cortez</span> <br> 
+                            <b class="h4">Localización:</b> <span class="h4 text-muted mb-4">Diagonal 64b # 10 la florida-nariño</span>  <br>
+                            <b class="h4">Especialidad:</b> <span class="h4 text-muted mb-4">Medico General</span> <br>
+                            <b class="h4">Horario de Atencion:</b> <span class="h4 text-muted mb-4">lunes a viernes 8:00 am - 12:00 pm y 2:00 am - 6:00 pm</span> <br>
+                        </p>
+                    </div>
+                                           
+                </div>
+
+            </div>
+        </section>
+        
+        <!----opciones citas----->
+        
+        <section id="citas" class="my-5">
+            <div class="container ">
+              <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6 ">
+                      <div class="card w-50 shadow" style="width: 18rem;">
+                          <img src="assest3/img/img1.png" class="card-img-top">                          
+                          <div class="card-body">
+                              <h5 class="card-title">CREAR CITAS</h5>
+                              <p class="card-text text-justify">Aqui el medico podrar establecer las fechas y horas de las citas segun su disponibilidad.</p>
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#crear"><a href="Crearcitas.html" class="btn btn-lg font-weight-bold" style="color: white">Acceder</a></button>                              
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col col-xs-12 col-sm-12  col-md-6">
+                      <div class="card w-50 shadow cw" style="width: 18rem;">
+                          <img src="assest3/img/cambio.png" class="card-img-top" >                          
+                          <div class="card-body">
+                              <h5 class="card-title">CONSULTAR CITAS</h5>
+                              <p class="card-text text-justify">En este espacio podras consultar y escoger tu cita acorde a la fecha y hora que prefieras</p>
+                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#registrar"><a href="usuario.html" class="btn btn-lg font-weight-bold" style="color: white">Registrar</a></button> 
+                          </div>
+                      </div>
+                  </div>                  
+              </div>
+          </div>
+          <div class="container  mt-4">
+              <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-6">
+                      <div class="card w-50 shadow" style="width: 18rem;">                         
+                          <img src="assest3/img/consulta.png" class="card-img-top">                          
+                          <div class="card-body">
+                              <h5 class="card-title">MODIFICAR CITAS</h5>
+                              <p class="card-text text-justify">En este espacio podras modificar tu cita acorde a la fecha y hora que prefieras</p>
+                              <button type="button" class="btn btn-warning"><a href="usuario.html" class="btn btn-lg font-weight-bold" style="color: white">Modificar</a></button>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-6">
+                      <div class="card w-50 shadow" style="width: 18rem;">                     
+                          <img src="assest3/img/xc.png" class="card-img-top" >                          
+                          <div class="card-body">
+                              <h5 class="card-title">CANCELAR CITAS </h5>
+                              <p class="card-text text-justify">En este espacio podras cancelar tu cita.</p>
+                              <button type="button" class="btn btn-danger"><a href="usuario.html" class="btn btn-lg font-weight-bold" style="color: white">Cancelar</a></button>
+                          </div>
+                      </div>
+                  </div>                  
+              </div>
+          </div>
+        </section>
+        
+       
+        
+        <footer>
+            <div class="contenedor-footer">
+                <div class="content-foo">
+                    <h4>Telefonos</h4>
+                    <p>123456789</p>                    
+                </div>
+                <div class="content-foo">
+                    <h4>E-mail</h4>
+                    <p>consultoriomedicovirtual@gmail.com</p>                    
+                </div>
+                <div class="content-foo">
+                    <h4>Direccion</h4>
+                    <p>diagonal 64b # 10 la florida Nariño</p>                    
+                </div>
+            </div>
+            <h2 class="titulo-final">&copy; Design consultorio medico virtual | grupo 7</h2>
+        </footer>
+        
+    
+        
+        
+        <!-- SCRIPT -->
+        <script src="assest3/js/jquery-3.5.1.slim.min.js" type="text/javascript"></script>
+        <script src="assest3/js/popper.min.js" type="text/javascript"></script>
+        <script src="assest3/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+        
+        <!-- SCROOLL REVEAL SCRIPT -->
+        <script>
+            window.sr = ScrollReveal();
+            
+            sr.reveal('.navbar',{
+                duration:2000,
+                origin:'bottom'
+            });
+            
+             sr.reveal('.bg',{
+                duration:2000,
+                origin:'top',
+                distance: '300px'
+                
+            });
+            
+             sr.reveal('.fg',{
+                duration:2000,
+                origin:'right',
+                distance: '300px'
+            });
+            
+            sr.reveal('.bts',{
+                duration:2000,
+                origin:'bottom',
+                delay: '1000'
+            });
+            
+            sr.reveal('#cr',{
+                duration:2000,
+                origin:'left',
+                distance: '300px'
+                
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+                   
+        </script>
+      
+  </body>
+</html>
