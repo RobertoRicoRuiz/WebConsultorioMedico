@@ -5,6 +5,7 @@
  */
 package Controladores;
 
+import Modelos.CitasMedicas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -19,6 +20,8 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "ControladorCitasMedicas", urlPatterns = {"/ControladorCitasMedicas"})
 public class ControladorCitasMedicas extends HttpServlet {
+    
+    CitasMedicas objCitasMedicas = new CitasMedicas();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,15 +37,31 @@ public class ControladorCitasMedicas extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ControladorCitasMedicas</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ControladorCitasMedicas at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            String accion = request.getParameter("btnAccion");
+            if(accion.equals("Insertar")){
+                String Fecha = request.getParameter("Fecha");
+                String Hora = request.getParameter("Hora");
+                String Tipodecita = request.getParameter("Tipodecita");
+                int Codigo = Integer.parseInt(request.getParameter("Codigo"));
+                
+                
+                objCitasMedicas.setFechaConsulta(Fecha);
+                objCitasMedicas.setHoraConsulta(Hora);
+                objCitasMedicas.setConsultorio(Tipodecita);
+                objCitasMedicas.setIdCitaMedica(Codigo);
+                
+                
+                objCitasMedicas.crearCitaMedica();
+                
+                String mensaje = "<html><body>"+
+                                  "<script type>'text/javascript'"+
+                                  " alert(''Producto insertado correctamente!)"+
+                                  " window.location.hreft='index.jsp'"+
+                                  "</script></body></html>"; 
+            }
+        }
+        catch(Exception error){
+            System.out.println("Error Controlador:"+ error);
         }
     }
 

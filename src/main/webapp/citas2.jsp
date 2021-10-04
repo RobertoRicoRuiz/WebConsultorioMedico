@@ -55,20 +55,31 @@
 			<!-- /Header -->
 			<td style="width:70%;">
                     <section style="text-align: center">
-                        <h1 style="font-size: 50px; color: darkslateblue; ">Reserva, modificacion y eliminacion de citas</h1>
+                        <h1 style="font-size: 50px; color: darkslateblue; ">Reserva de citas</h1>
+                        <br/>
                     </section>
 			<!-- Breadcrumb -->
 			
 			
-                        
+                       
                         
                      <div id="booking" class="section">
 		<div class="section-center">
-			<div class="container">
+		<br/>
+                <br/>
+                <br/>
+                    
+                    <div class="container">
+                        
+                        <br/>
 				<div class="row">
+                                    <br/>
 					<div class="col-md-7 col-md-push-5">
+                                            <br/>
 						<div class="booking-cta">
+                                                    <br/>
 							<h1>Seleccione la fecha y hora de la cita</h1>
+                                                        <br/>
 							<p>Recuerde el horario de atencion es de 8am a 6pm de lunes a Viernes
 							</p>
 						</div>
@@ -77,10 +88,11 @@
 						<div class="booking-form">
 							<form>
 								
+                                                             <form method="POST" action="ControladorCitasMedicas">
                                                                 
                                                             <div class="form-group">
 											<span class="form-label">Tipo de cita</span>
-											<select class="form-control">
+											<select class="form-control" name="consultorio">
 												<option>Presencial</option>
 												<option>Virtual</option>
 												
@@ -91,18 +103,49 @@
                                                             
                                                             
 								<div class="row">
-									<div class="col-sm-7">
+									<div class="col-sm-5">
 										<div class="form-group">
 											<span class="form-label">Fecha</span>
-											<input class="form-control" type="date" required>
+											<input class="form-control" type="date" name="fecha_consulta" required >
 										</div>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5">
 										<div class="form-group">
 											<span class="form-label">Hora</span>
-											<input class="form-control" type="time" required>
+											<input class="form-control" type="time" name="hora_consulta" required>
 										</div>
 									</div>
+                                                                    <div class="col-sm-5">
+										<div class="form-group">
+											<span class="form-label">Paciente</span>
+											<input class="form-control" type="int" name="ID_paciente" required>
+										</div>
+									</div>
+                                                                    <div class="col-sm-6">
+										<div class="form-group">
+											<span class="form-label">Medico</span>
+											<input class="form-control" type="int" name="	ID_medico" required>
+										</div>
+                                                                    </div>
+                                                                    <div class="col-sm-10">
+										<div class="form-group">
+											<span class="form-label">Direccion</span>
+											<input class="form-control" type="text" name="direccion" required>
+										</div>
+									</div>
+                                                                    <div class="col-sm-10">
+										<div class="form-group">
+											<span class="form-label">Observaciones</span>
+											<input class="form-control" type="text" name="piso" required>
+										</div>
+									</div>
+                                                                    <!-- comment -->
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                                                                    
 								</div>
 								
 															
@@ -121,8 +164,8 @@
                                                                         
                                                                 </div>
                                                                 <div class="form-btn">
-									
-                                                                        <button class="submit-btn">Agendar</button>
+									<br/>
+                                                                        <button class="submit-btn" name="btnAccion" value="Insertar">Agendar</button>
                                                                 </div>  
 							</form>
 						</div>

@@ -1,3 +1,11 @@
+<%-- 
+    Document   : Crearcitas
+    Created on : 3/10/2021, 07:52:26 PM
+    Author     : user
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>
@@ -342,3 +350,4 @@
         
     </body>
 </html>
+

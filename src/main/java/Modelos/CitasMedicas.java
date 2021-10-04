@@ -5,6 +5,9 @@
  */
 package Modelos;
 
+import static com.sun.media.jfxmediaimpl.MediaUtils.error;
+import java.sql.PreparedStatement;
+
 /**
  *
  * @author rober
@@ -91,7 +94,31 @@ public class CitasMedicas {
     }
     
      //METODOS
-    public void crearCitaMedica() {
+    public void crearCitaMedica(String error) {
+       
+        Conexion objConector = new Conexion();
+        objConector.conectar();
+        
+        try {
+            String sql = "INSERT INTO citas_medicas VALUES(?,?,?,?,?,?,?);";
+            PreparedStatement stmt;
+            stmt = objConector.conn.prepareStatement(sql);
+            stmt.setInt(1, this.idCitaMedica); 
+            stmt.setString(2, this.consultorio);
+            stmt.setString(3,this.fechaConsulta);
+            stmt.setInt(4, this.idPaciente);
+            stmt.setInt(5, this.idMedico);
+            stmt.setString(6, this.direccion);
+            stmt.setString(7, this.piso);
+            
+            stmt.execute();
+            
+            objConector.desconectar();
+            
+        } catch (Exception e) {
+            System.out.println("Error Modelo: "+error);
+        }
+        
         
     }
     
@@ -109,6 +136,10 @@ public class CitasMedicas {
     
     public void eliminarCitaMedica() {
         
+    }
+
+    public void crearCitaMedica() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

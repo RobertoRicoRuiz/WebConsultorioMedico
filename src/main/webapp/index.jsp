@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Citas</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -20,6 +20,8 @@
                     <section style="text-align: center">
                         <h1 style="font-size: 50px; color: darkslateblue; ">Consultorio Medico Virtual</h1>
                     </section>
+                    
+                    
                 </td>
                 <td style="width:30%;"><div align="center"><img src="assets/img/Logo.png"></div></td>
             </tr>
