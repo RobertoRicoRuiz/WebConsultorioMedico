@@ -176,7 +176,7 @@
                       </div>
                   </form>
                   <hr>
-                  <button type="submit" class="btn btn-primary btn btn-block">Crear citas</button>
+                  <button type="submit" class="btn btn-primary btn btn-block" name="btnAccion" value="Insertar">Crear citas</button>
               </div>
           </div>  
           </div>

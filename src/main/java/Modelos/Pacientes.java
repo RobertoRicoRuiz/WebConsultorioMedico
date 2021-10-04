@@ -6,6 +6,7 @@
 package Modelos;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 /**
  *
  * @author Roberto Rico Ruiz
@@ -158,16 +159,89 @@ public class Pacientes{
         }
     }
     
-    public void consultarPaciente() {
+    public ResultSet consultarPaciente(){
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
         
+        try {
+            
+            String sql = "SELECT * FROM paciente WHERE ID_Paciente = ? ; ";
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            stmt.setInt(1, this.idPaciente);
+            ResultSet consulta = stmt.executeQuery(); 
+            objConector.desconectar();
+            return consulta; 
+            
+        } catch (Exception error) {
+            System.out.println("Error Modelo: " + error);
+        }
+ 
+        return null;
     }
     
-    public void listarPaciente() {
+    public ResultSet listarPaciente(){
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
+        
+        try {
+            
+            String sql = "SELECT * FROM paciente; ";
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            ResultSet consulta = stmt.executeQuery(); 
+            objConector.desconectar();
+            return consulta; 
+            
+        } catch (Exception error) {
+            System.out.println("Error Modelo: "+error);
+        }
+ 
+        return null;
         
     }
     
     public void actualizarPaciente() {
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
         
+        try {
+            
+            String sql = "UPDATE paciente SET "+
+                         "nombre = ?, "+
+                         "apellido = ?, "+
+                         "sexo = ?, "+
+                         "email = ? "+
+                         "celular = ? "+
+                         "telefono = ? "+
+                         "ocupacion = ? "+
+                         "direccion = ? "+
+                         "tipo_sangre = ? "+
+                         "profesion = ? "+
+                         "ID_eps = ? "+
+                         "WHERE ID_paciente = ?; "; 
+            
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            stmt.setString(1, this.nombre);
+            stmt.setString(2, this.apellido);
+            stmt.setString(3, this.sexo);
+            stmt.setString(4, this.email);
+            stmt.setString(5, this.celular);
+            stmt.setString(6, this.telefono);
+            stmt.setString(7, this.ocupacion);
+            stmt.setString(8, this.direccion);
+            stmt.setString(9, this.tipoSangre);
+            stmt.setString(10, this.profesion);
+            stmt.setInt(11, this.id_EPS);
+            stmt.setInt(12, this.idPaciente);
+            
+            stmt.execute(); 
+            
+            objConector.desconectar();
+        } catch (Exception error) {
+            System.out.println("Error Modelo: " + error);
+        }
     }
     
     public void eliminarPaciente() {
