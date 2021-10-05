@@ -52,7 +52,7 @@ public class CitasMedicas {
     public void setHoraConsulta(String horaConsulta) {
         this.horaConsulta = horaConsulta;
     }
-
+/**
     public int getIdPaciente() {
         return idPaciente;
     }
@@ -77,14 +77,7 @@ public class CitasMedicas {
         this.direccion = direccion;
     }
 
-    public String getPiso() {
-        return piso;
-    }
-
-    public void setPiso(String piso) {
-        this.piso = piso;
-    }
-
+    */
     public String getConsultorio() {
         return consultorio;
     }
@@ -100,16 +93,14 @@ public class CitasMedicas {
         objConector.conectar();
         
         try {
-            String sql = "INSERT INTO citas_medicas VALUES(?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO citas_medicas VALUES(?,?,?,?);";
             PreparedStatement stmt;
             stmt = objConector.conn.prepareStatement(sql);
-            stmt.setInt(1, this.idCitaMedica); 
-            stmt.setString(2, this.consultorio);
-            stmt.setString(3,this.fechaConsulta);
-            stmt.setInt(4, this.idPaciente);
-            stmt.setInt(5, this.idMedico);
-            stmt.setString(6, this.direccion);
-            stmt.setString(7, this.piso);
+            stmt.setString(1, this.fechaConsulta);
+            stmt.setString(2, this.horaConsulta);
+            stmt.setString(3, this.consultorio);
+            stmt.setInt(4,this.idCitaMedica);
+           
             
             stmt.execute();
             

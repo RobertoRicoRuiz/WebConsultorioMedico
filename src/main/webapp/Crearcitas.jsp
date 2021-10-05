@@ -3,8 +3,14 @@
     Created on : 3/10/2021, 07:52:26 PM
     Author     : user
 --%>
+<%@page import="Controladores.ControladorCitasMedicas"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelos.CitasMedicas"%>
+
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
@@ -131,7 +137,9 @@
               <img src="assest3/img/img1.png" class="card-img-top">
               <h3 class="font-weight-bold text-center">Crear citas</h3>
               <div class="card-body">
-                  <form action="action">
+                  
+                  <form method="POST" action="ControladorCitasMedicas" >
+                      
                       <div class="row">
                           <div class="col-sm-7">
                               <div class="form-group">
@@ -148,7 +156,7 @@
                           <div class="col-sm-6">
                           <div class="form-group">
                               <span class="form-label">Tipo de cita</span>
-                              <select class="form-control" name="Tipodecita">
+                              <select class="form-control" name="consultorio">
                                   <option>Presencial</option>
                                   <option>Virtual</option>
                               </select>
@@ -159,7 +167,7 @@
                           <div class="form-group">
                               <span class="form-label">Codigo</span>
                               <select class="form-control" name="Codigo"> 
-                                  <option>PC-1</option>
+                                  <option>1</option>
                                   <option>PC-2</option>
                                   <option>PC-3</option> 
                                   <option>PC-4</option> 
@@ -174,9 +182,11 @@
                           </div>
                           </div>
                       </div>
+                      
+                      <button type="submit" class="btn btn-primary btn btn-block" name="btnAccion" value="Insertar">Crear citas </button>
                   </form>
                   <hr>
-                  <button type="submit" class="btn btn-primary btn btn-block">Crear citas</button>
+                  <button type="submit" class="btn btn-primary btn btn-block" name="btnAccion" value="Insertar">Crear citas </button>
               </div>
           </div>  
           </div>

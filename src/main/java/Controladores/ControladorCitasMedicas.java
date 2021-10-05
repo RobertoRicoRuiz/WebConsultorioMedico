@@ -41,13 +41,13 @@ public class ControladorCitasMedicas extends HttpServlet {
             if(accion.equals("Insertar")){
                 String Fecha = request.getParameter("Fecha");
                 String Hora = request.getParameter("Hora");
-                String Tipodecita = request.getParameter("Tipodecita");
+                String consultorio = request.getParameter("consultorio");
                 int Codigo = Integer.parseInt(request.getParameter("Codigo"));
                 
                 
                 objCitasMedicas.setFechaConsulta(Fecha);
                 objCitasMedicas.setHoraConsulta(Hora);
-                objCitasMedicas.setConsultorio(Tipodecita);
+                objCitasMedicas.setConsultorio(consultorio);
                 objCitasMedicas.setIdCitaMedica(Codigo);
                 
                 
