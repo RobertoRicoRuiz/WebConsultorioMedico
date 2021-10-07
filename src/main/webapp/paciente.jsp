@@ -18,6 +18,17 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
     <body>
+        <script type="text/javascript">
+            function confirmar(){
+                var respuesta = confirm("¿Desea eliminar el paciente?"); 
+                if(respuesta === true){
+                    return true; 
+                }
+                else {
+                    return false; 
+                }
+            }
+        </script>
         <section style="background-color: blue; text-align: center">
             <h1 style="font-size: 50px; color: #ffffff; ">FORMULARIO INGRESO DATOS DE PACIENTE  </h1>
         </section>
@@ -143,7 +154,7 @@
                         <td><%=listaPacientes.get(i).getId_EPS()%></td>
                         <td>
                             <a href="actualizarPaciente.jsp?idPaciente=<%=listaPacientes.get(i).getIdPaciente()%>"><button class="btn btn-outline-success">Actualizar</button></a>
-                            <a href="ControlPacientes?idPaciente=<%=listaPacientes.get(i).getIdPaciente()%>"<button class="btn btn-danger"> Eliminar </button></a>
+                            <a href="ControlPacientes?idPaciente=<%=listaPacientes.get(i).getIdPaciente()%>&btnAccion=Eliminar"<button class="btn btn-danger" onclick="return confirmar();"> Eliminar </button></a>
                         </td>
                       </tr>
                       <%}%>

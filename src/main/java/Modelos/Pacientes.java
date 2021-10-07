@@ -165,7 +165,7 @@ public class Pacientes{
         
         try {
             
-            String sql = "SELECT * FROM paciente WHERE ID_Paciente = ? ; ";
+            String sql = "SELECT * FROM paciente WHERE ID_paciente = ? ; ";
             PreparedStatement stmt; 
             stmt = objConector.conn.prepareStatement(sql); 
             stmt.setInt(1, this.idPaciente);
@@ -211,18 +211,19 @@ public class Pacientes{
                          "nombre = ?, "+
                          "apellido = ?, "+
                          "sexo = ?, "+
-                         "email = ? "+
-                         "celular = ? "+
-                         "telefono = ? "+
-                         "ocupacion = ? "+
-                         "direccion = ? "+
-                         "tipo_sangre = ? "+
-                         "profesion = ? "+
+                         "email = ?, "+
+                         "celular = ?, "+
+                         "telefono = ?, "+
+                         "ocupacion = ?, "+
+                         "direccion = ?, "+
+                         "tipo_sangre = ?, "+
+                         "profesion = ?, "+
                          "ID_eps = ? "+
                          "WHERE ID_paciente = ?; "; 
             
             PreparedStatement stmt; 
-            stmt = objConector.conn.prepareStatement(sql); 
+            stmt = objConector.conn.prepareStatement(sql);
+            stmt.setInt(12, this.idPaciente);
             stmt.setString(1, this.nombre);
             stmt.setString(2, this.apellido);
             stmt.setString(3, this.sexo);
@@ -234,8 +235,7 @@ public class Pacientes{
             stmt.setString(9, this.tipoSangre);
             stmt.setString(10, this.profesion);
             stmt.setInt(11, this.id_EPS);
-            stmt.setInt(12, this.idPaciente);
-            
+           
             stmt.execute(); 
             
             objConector.desconectar();
@@ -244,7 +244,25 @@ public class Pacientes{
         }
     }
     
-    public void eliminarPaciente() {
+    public String eliminarPaciente(){
+        Conexion objConector = new Conexion(); 
+        objConector.conectar();
         
+        try {
+            
+            String sql = "DELETE FROM paciente "+
+                         "WHERE ID_paciente = ?; "; 
+            PreparedStatement stmt; 
+            stmt = objConector.conn.prepareStatement(sql); 
+            stmt.setInt(1, this.idPaciente);
+            
+            stmt.execute(); 
+            
+            objConector.desconectar();
+        } catch (Exception error) {
+            System.out.println("Error Modelo: " + error);
+            return error.toString(); 
+        }
+        return null; 
     }
 }

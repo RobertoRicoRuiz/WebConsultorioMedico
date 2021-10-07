@@ -81,7 +81,7 @@
                     </form>
                     
                     <button onclick="location.href='tablas.html'"> Enviar </button>
-                    <button onclick="location.href='paciente.html'"> Registrar </button>
+                    <button onclick="location.href='paciente.jsp'"> Registrar </button>
                 </td>
             </tr>
         </table>    

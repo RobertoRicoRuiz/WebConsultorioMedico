@@ -115,7 +115,34 @@ public class ControlPacientes extends HttpServlet {
                 
                 out.println(mensaje);
 
-            }               
+            }
+            else if (accion.equals("Eliminar")){
+                
+                int idPaciente = Integer.parseInt(request.getParameter("idPaciente")); 
+                
+                objPacientes.setIdPaciente(idPaciente);
+                
+                String respuesta = objPacientes.eliminarPaciente();
+                
+                if (respuesta == null){
+                    String mensaje = "<html> <body>"+
+                                 " <script type='text/javaScript'> "+
+                                 "      alert('Paciente eliminado correctamente!'); "+
+                                 "      window.location.href='index.jsp'"+
+                                 "</script> </body> </html>"; 
+                
+                    out.println(mensaje);
+                }
+                else {
+                    String mensaje = "<html> <body>"+
+                                 " <script type='text/javaScript'> "+
+                                 "      alert('Error en la eliminación'); "+
+                                 "      window.location.href='index.jsp'"+
+                                 "</script> </body> </html>"; 
+                
+                    out.println(mensaje);
+                }
+            }   
         }
         catch(Exception error){
             System.out.println("Error Controlador: "+ error);
