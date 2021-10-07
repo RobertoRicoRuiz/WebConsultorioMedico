@@ -87,26 +87,26 @@ public class CitasMedicas {
     }
     
      //METODOS
-    public void crearCitaMedica(String error) {
+    public void crearCitaMedica() {
        
         Conexion objConector = new Conexion();
         objConector.conectar();
         
         try {
-            String sql = "INSERT INTO citas_medicas VALUES(?,?,?,?);";
+            String sql = "INSERT INTO citas_medicas VALUES(?,?,?,NULL,NULL,NULL,NULL,?);";
             PreparedStatement stmt;
             stmt = objConector.conn.prepareStatement(sql);
-            stmt.setString(1, this.fechaConsulta);
-            stmt.setString(2, this.horaConsulta);
-            stmt.setString(3, this.consultorio);
-            stmt.setInt(4,this.idCitaMedica);
+            stmt.setString(2, this.fechaConsulta);
+            stmt.setString(3, this.horaConsulta+":00");
+            stmt.setString(4, this.consultorio);
+            stmt.setInt(1,this.idCitaMedica);
            
             
             stmt.execute();
             
             objConector.desconectar();
             
-        } catch (Exception e) {
+        } catch (Exception error) {
             System.out.println("Error Modelo: "+error);
         }
         
@@ -129,9 +129,7 @@ public class CitasMedicas {
         
     }
 
-    public void crearCitaMedica() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
     
 }

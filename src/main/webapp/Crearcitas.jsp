@@ -138,7 +138,7 @@
               <h3 class="font-weight-bold text-center">Crear citas</h3>
               <div class="card-body">
                   
-                  <form method="POST" action="ControladorCitasMedicas" >
+                  <form method="POST" action="ControlCitas" >
                       
                       <div class="row">
                           <div class="col-sm-7">
@@ -168,25 +168,25 @@
                               <span class="form-label">Codigo</span>
                               <select class="form-control" name="Codigo"> 
                                   <option>1</option>
-                                  <option>PC-2</option>
-                                  <option>PC-3</option> 
-                                  <option>PC-4</option> 
-                                  <option>PC-5</option>
-                                  <option>VR-1</option>
-                                  <option>VR-2</option>
-                                  <option>VR-3</option> 
-                                  <option>VR-4</option>
-                                  <option>VR-5</option>
+                                  <option>2</option>
+                                  <option>3</option> 
+                                  <option>4</option> 
+                                  <option>5</option>
+                                  <option>6</option>
+                                  <option>7</option>
+                                  <option>8</option> 
+                                  <option>9</option>
+                                  <option>10</option>
                               </select>
                               <span class="select-arrow"></span>
                           </div>
                           </div>
                       </div>
                       
-                      <button type="submit" class="btn btn-primary btn btn-block" name="btnAccion" value="Insertar">Crear citas </button>
+                      <button class="btn btn-primary btn btn-block" name="btnAccion" value="Insertar">Crear citas </button>
                   </form>
                   <hr>
-                  <button type="submit" class="btn btn-primary btn btn-block" name="btnAccion" value="Insertar">Crear citas </button>
+                  
               </div>
           </div>  
           </div>
