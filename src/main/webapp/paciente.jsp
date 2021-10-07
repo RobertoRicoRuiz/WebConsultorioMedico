@@ -4,6 +4,9 @@
     Author     : rober
 --%>
 
+<%@page import="Controladores.ControlPacientes"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Modelos.Pacientes"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +18,17 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     </head>
     <body>
+        <script type="text/javascript">
+            function confirmar(){
+                var respuesta = confirm("¿Desea eliminar el paciente?"); 
+                if(respuesta === true){
+                    return true; 
+                }
+                else {
+                    return false; 
+                }
+            }
+        </script>
         <section style="background-color: blue; text-align: center">
             <h1 style="font-size: 50px; color: #ffffff; ">FORMULARIO INGRESO DATOS DE PACIENTE  </h1>
         </section>
@@ -103,53 +117,47 @@
                 <table class="table table-striped table-hover">
                     <thead>
                       <tr>
+                        <th scope="col">ID Paciente</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
+                        <th scope="col">Sexo</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Número Celular</th>
-                        <th scope="col">Sexo</th>
                         <th scope="col">Número Teléfono</th>
                         <th scope="col">Ocupación</th>
                         <th scope="col">Dirección</th>
-                        <th scope="col">Profesión</th>
                         <th scope="col">Tipo de Sangre</th>
-                        <th scope="col">Número Teléfono</th>
+                        <th scope="col">Profesión</th>
+                        <th scope="col">ID EPS</th>
                       </tr>
                     </thead>
                     <tbody>
+                        <%
+                            ArrayList<Pacientes> listaPacientes = new ArrayList<>();
+                            ControlPacientes ctrPacientes = new ControlPacientes();
+                            listaPacientes = ctrPacientes.listar();
+                            
+                            for(int i=0; i<listaPacientes.size(); i++) {
+                        %>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <th scope="row"><%=listaPacientes.get(i).getIdPaciente()%></th>
+                        <td><%=listaPacientes.get(i).getNombre()%></td>
+                        <td><%=listaPacientes.get(i).getApellido()%></td>
+                        <td><%=listaPacientes.get(i).getSexo()%></td>
+                        <td><%=listaPacientes.get(i).getEmail()%></td>
+                        <td><%=listaPacientes.get(i).getCelular()%></td>
+                        <td><%=listaPacientes.get(i).getTelefono()%></td>
+                        <td><%=listaPacientes.get(i).getOcupacion()%></td>
+                        <td><%=listaPacientes.get(i).getDireccion()%></td>
+                        <td><%=listaPacientes.get(i).getTipoSangre()%></td>
+                        <td><%=listaPacientes.get(i).getProfesion()%></td>
+                        <td><%=listaPacientes.get(i).getId_EPS()%></td>
                         <td>
-                            <button class="btn btn-outline-success">Actualizar</button>
-                            <button class="btn btn-danger"> Eliminar </button>
+                            <a href="actualizarPaciente.jsp?idPaciente=<%=listaPacientes.get(i).getIdPaciente()%>"><button class="btn btn-outline-success">Actualizar</button></a>
+                            <a href="ControlPacientes?idPaciente=<%=listaPacientes.get(i).getIdPaciente()%>&btnAccion=Eliminar"<button class="btn btn-danger" onclick="return confirmar();"> Eliminar </button></a>
                         </td>
                       </tr>
-              <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <button class="btn btn-outline-success">Actualizar</button>
-                            <button class="btn btn-danger"> Eliminar </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>
-                            <button class="btn btn-outline-success">Actualizar</button>
-                            <button class="btn btn-danger"> Eliminar </button>
-                        </td>
-                      </tr>
+                      <%}%>
                     </tbody>
                   </table>
             </section>
